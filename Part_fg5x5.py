@@ -22,7 +22,7 @@ def Hamiltonian(e, V, W):
 
 
 e = 1
-W = -2.5
+W = 0
 eigvals = np.zeros((n_Vs, 5))
 eigvects = np.zeros((n_Vs, 25))
 for i, V in enumerate(Vs):
@@ -43,11 +43,11 @@ def E0_HF(E,V,W, N = 2):
 
 
 fig, ax = plt.subplots(figsize = (6,4))
-ax.plot(Vs, eigvals[:,0], 'r-', label = r'$\epsilon_0$')
-ax.plot(Vs, eigvals[:,1], 'b-', label = r'$\epsilon_1$')
-ax.plot(Vs, eigvals[:,2], 'g-', label = r'$\epsilon_2$')
-ax.plot(Vs, eigvals[:,3], 'y-', label = r'$\epsilon_3$')
-ax.plot(Vs, eigvals[:,4], 'k-', label = r'$\epsilon_4$')
+ax.plot(Vs, eigvals[:,0], 'r-', label = r'$\epsilon_0, W=0$')
+ax.plot(Vs, eigvals[:,1], 'b-', label = r'$\epsilon_1, W=0$')
+ax.plot(Vs, eigvals[:,2], 'g-', label = r'$\epsilon_2, W=0$')
+ax.plot(Vs, eigvals[:,3], 'y-', label = r'$\epsilon_3, W=0$')
+ax.plot(Vs, eigvals[:,4], 'k-', label = r'$\epsilon_4, W=0$')
 
 HF_sol = [E0_HF(e,i,W,N=4) for i in Vs]
 ax.plot(Vs, HF_sol, 'b:', label = r'HF solution, $W = 0$')
@@ -69,11 +69,11 @@ for i, V in enumerate(Vs):
 
 
 #fig2, ax2 = plt.subplots()
-ax.plot(Vs, eigvals[:,0], 'r--', label = r'$\epsilon_0$')
-ax.plot(Vs, eigvals[:,1], 'b--', label = r'$\epsilon_1$')
-ax.plot(Vs, eigvals[:,2], 'g--', label = r'$\epsilon_2$')
-ax.plot(Vs, eigvals[:,3], 'y--', label = r'$\epsilon_3$')
-ax.plot(Vs, eigvals[:,4], 'k--', label = r'$\epsilon_4$')
+ax.plot(Vs, eigvals[:,0], 'r--', label = r'$\epsilon_0, W=-0.5$')
+ax.plot(Vs, eigvals[:,1], 'b--', label = r'$\epsilon_1, W=-0.5$')
+ax.plot(Vs, eigvals[:,2], 'g--', label = r'$\epsilon_2, W=-0.5$')
+ax.plot(Vs, eigvals[:,3], 'y--', label = r'$\epsilon_3, W=-0.5$')
+ax.plot(Vs, eigvals[:,4], 'k--', label = r'$\epsilon_4, W=-0.5$')
 
 ax.set_xlabel(r'$V$')
 ax.set_ylabel('energy')
